@@ -1,0 +1,213 @@
+body{
+    margin: 0;
+    background-image: url("../images/backgroung_img/memfhis.png");
+}
+h1{
+    width: auto;
+    color: #000;
+    text-align: center;
+    text-shadow: 2px 2px yellow ;
+    font-size: 40px;
+}
+h2{
+    position: absolute;
+    left: 130px;
+    bottom: 560px;
+}
+img{
+    height: 150px;
+    width: 150px;
+}
+h3.zhuanji{
+    position: absolute;
+    font-size: xx-large;
+    bottom: 920px;
+    left: 100px;
+}
+h3.MV{
+    position: absolute;
+    font-size: xx-large;
+    bottom: 920px;
+    left: 100px;
+}
+p.text{
+    position: absolute;
+    bottom: 770px;
+    color: #000;
+}
+p.text2{
+    position: absolute;
+    bottom: 600px;
+    color: #000;
+}
+p.text3{
+    position: absolute;
+    bottom: 430px;
+    color: #000;
+}
+p.text4{
+    position: absolute;
+    bottom: 260px;
+    color: #000;
+}
+p.text5{
+    position: absolute;
+    bottom: 90px;
+    color: #000;
+}
+p.jieshao{
+    position:absolute;
+    left: 100px;
+    right: 100px;
+    font-size: large;
+}
+p.fixed{
+    position:fixed;
+}
+a p{
+    color: #000;
+}
+a p:hover{
+    color: gray;
+}
+img.first{
+    position: absolute;
+    bottom: 800px;
+}
+img.Second{
+    position: absolute;
+    bottom: 630px;
+}
+img.Third{
+    position: absolute;bottom: 460px;
+}
+img.Fourth{
+    position: absolute;bottom: 290px;
+}
+img.Fifth{
+    position: absolute;bottom: 120px;
+}
+input{
+    width: 150px;
+}
+div.iframe{
+    float: left;
+}
+.div {
+    opacity:0;transition:all ease 1s;background-color:gray;
+}
+.div:hover{
+    opacity:1;
+}
+.show{
+    opacity: 0;
+    animation:showtime infinite 4s;
+    -webkit-animation:showtime infinite 4s;
+    -moz-animation:showtime infinite 4s;
+    -o-animation:showtime infinite 4s;
+    z-index: 100;
+}
+.show:hover{
+    opacity:1;
+    transition:all ease 1s;background-color:gray;
+    animation:showtime infinite 0s;
+    -webkit-animation:showtime infinite 0s;
+    -moz-animation:showtime infinite 0s;
+    -o-animation:showtime infinite 0s;
+}
+@keyframes showtime{
+    25%{
+        opacity: 0.5;
+    }
+    50%{
+        opacity: 1;
+    }
+    75%{
+        opacity: 0.5;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+ul {
+    opacity: 0.5;
+    position: fixed;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 100px;
+    background-color: antiquewhite;
+}
+li{
+    border: 1px solid black;
+    background-color: dimgrey;
+    text-align: center;
+}
+li a{
+    display: block;
+    padding: 8px 16px;
+    background-color: darkgrey;
+    text-decoration: none;
+}
+li a:hover{
+    background-color: dimgrey;
+}
+a:link {color: #000;}      /* 未访问链接*/
+a:visited {color:dodgerblue;}  /* 已访问链接 */
+a:hover {color:#fff;}  /* 鼠标移动到链接上 */
+a:active {color:orangered;}  /* 鼠标点击时 */
+video.jiao{
+    position: fixed;
+    right: 0;
+    top: 0;
+    background-size: cover;
+    height: 200px;
+    width: 320px;
+    /*加滤镜*/
+    /*-webkit-filter: grayscale(100%);*/
+    /*filter:grayscale(100%);*/
+    z-index:2;
+}
+video.MV{
+    position: absolute;
+    left: 100px;
+    bottom: 700px;
+}
+source{
+    min-width: 100%;
+    min-height: 100%;
+    height: auto;
+    width: auto;
+}
+#Fir{
+    left: 150px;
+}
+#Sec{
+    left: 320px;
+}
+#Tir{
+    left: 490px;
+}
+#Fou{
+    left: 660px;
+}
+#Fif{
+    left: 830px;
+}
+#Six{
+    left: 1000px;
+}
+#Sev{
+    left: 1170px;
+}
+#box{
+    background-image: url("../images/pentatonix.jpg") ;
+    background-repeat: no-repeat;
+    background-color: white;
+    width: 300px;
+    height: 300px;
+}
+img.light{
+    width: auto;
+    height: auto;
+}
