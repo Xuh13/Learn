@@ -4,32 +4,35 @@
         <title>HTML_TEST</title>
         <meta charset="UTF-8"><!--中文能好好识别 -->
         <base target="_blank"><!--新窗口弹出新的-->
+        <link rel="stylesheet" type="text/css" href="test_css.css">
     </head>
     
     <body>
         <script src="test_js.js"></script>
         <h1>HTML_TEST</h1>
         <a href="https://www.baidu.com/"><p>test</p></a>
-        <img src="images/buliang.gif" id='light' onclick="changeImage()" alt="图片没啦" title="这是个title">
+        <img src="images/buliang.gif" id='light' onclick="changeImage()" alt="图片没啦" title="这是个灯泡">
+        <div id='box'></div>
+        <ul>
+            <li>aaa</li>
+            <li>2222</li>
+        </ul>
     </body>
 </html>
 
+
 <script>
-        function changeImage()
-        {
-            let element;
-            try {
-                element = document.getElementById('light')
-                if (element.src.match("buliang")) {
-                    element.src = "images/liang.gif";
-                } else {
-                    element.src = "images/buliang.gif";
-                }
-            } catch (err) {
-                let txt = "本页有一个错误。\n\n";
-                txt += "错误描述：" + err.message + "\n\n";
-                txt += "点击确定继续。\n\n";
-                alert(txt);
+        let a=0;
+        let width=1;
+        let dh=document.getElementById('box');
+        function move() {
+            a++;
+            if(a>=500){
+                a=0;
             }
-        }//灯泡亮不亮
+            let left;
+            left=0-width*a;
+            dh.style.backgroundPosition=left+"px";
+        }
+        window.setInterval(move,10)
 </script>

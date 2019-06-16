@@ -1,0 +1,7 @@
+#box{
+    background-image: url("images/pentatonix.jpg");
+    background-repeat: no-repeat;
+    background-color: white;
+    width: 300px;
+    height: 300px;
+}

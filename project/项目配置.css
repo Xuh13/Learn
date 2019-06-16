@@ -94,7 +94,9 @@ div.iframe{
     float: left;
 }
 .div {
-    opacity:0;transition:all ease 1s;background-color:gray;
+    opacity:0;
+    transition:all ease 1s;
+    background-color:gray;
 }
 .div:hover{
     opacity:1;
