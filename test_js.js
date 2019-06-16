@@ -4,9 +4,9 @@ function changeImage()
     try {
         element = document.getElementById('light')
         if (element.src.match("buliang")) {
-            element.src = "/images/liang.gif";
+            element.src = "./images/liang.gif";
         } else {
-            element.src = "/images/buliang.gif";
+            element.src = "./images/buliang.gif";
         }
     } catch (err) {
         let txt = "本页有一个错误。\n\n";
