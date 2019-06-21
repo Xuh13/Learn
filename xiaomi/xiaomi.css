@@ -1,0 +1,21 @@
+.top{
+    display: block;
+    height: 98px;
+    width: 1130px;
+}
+
+.login_background{
+    width: 100%;
+    height: 588px;
+    position: absolute;
+    left: 0;
+    top: 98px;
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-image: url("https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/f838fdcd77715410b441f2f56d8f10cd.jpg");
+}
+.login_background a{
+    display: block;
+    height: 588px;
+    text-indent: -9999em;
+}
