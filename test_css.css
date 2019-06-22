@@ -33,4 +33,5 @@ li{
     text-indent: 20px;
     text-align: center;
     line-height: 150px;    
+    text-decoration: green line-through;
 }
