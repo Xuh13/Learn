@@ -34,7 +34,7 @@ li{
     padding: 10px;
     margin: 10px;
     /* background: url('images/pentatonix.jpg') no-repeat -150px -150px; */
-   
+    box-sizing:border-box;
     text-align: center;
     line-height: 150px;    
     text-decoration: line-through;
