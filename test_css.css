@@ -30,8 +30,11 @@ li{
 .try{
     height: 150px;
     width: 150px;
-    background: blue url('images/pentatonix.jpg') no-repeat -150px -150px;
-    text-indent: 20px;
+    border: 10px solid green;
+    padding: 10px;
+    margin: 10px;
+    /* background: url('images/pentatonix.jpg') no-repeat -150px -150px; */
+   
     text-align: center;
     line-height: 150px;    
     text-decoration: line-through;
