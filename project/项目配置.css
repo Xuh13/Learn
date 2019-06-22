@@ -24,6 +24,27 @@ h3.zhuanji{
     bottom: 920px;
     left: 100px;
 }
+.main .i_1_1{
+    position: absolute;bottom: 800px;left: 150px;
+}
+.main .i_1_2{
+    position: absolute;bottom: 800px;left: 320px;
+}
+.main .i_1_3{
+    position: absolute;bottom: 800px;left: 490px;
+}
+.main .i_1_4{
+    position: absolute;bottom: 800px;left: 660px;
+}
+.main .i_1_5{
+    position: absolute;bottom: 800px;left: 830px;
+}
+.main .i_1_6{
+    position: absolute;bottom: 800px;left: 1000px;
+}
+.main .i_1_7{
+    position: absolute;bottom: 800px;left: 1170px;
+}
 h3.MV{
     position: absolute;
     font-size: xx-large;
