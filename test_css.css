@@ -26,3 +26,11 @@ li{
     background-color: dimgrey;
     text-align: center;
 }
+.try{
+    height: 200px;
+    width: 500px;
+    background: blue url('images/pentatonix.jpg') no-repeat -150px -150px;
+    text-indent: 20px;
+    text-align: center;
+    line-height: 200px;    
+}
