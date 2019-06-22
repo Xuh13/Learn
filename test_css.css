@@ -41,24 +41,3 @@ li{
     text-decoration-color: red;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
 }
-.qqq{
-    float: left;
-    margin:10px;
-    border: 100px solid blue;
-    padding: 100px;
-    height: 100px;
-    width: 100px;
-}
-.www{
-    float: left;
-    margin:10px;
-    border: 100px solid blue;
-    padding: 100px;
-    height: 100px;
-    width: 100px;
-}
-.qwe::after{
-    content:'';
-    display: block;
-    clear:both;
-}
