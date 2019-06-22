@@ -24,23 +24,23 @@
             <a href=""><li>2222</li></a>
         </ul>
         <div class="try">
-            11111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111
+            11111111111111111111111111111111111111111111111111111111111111111111111111111111111111
         </div>
     </body>
 </html>
 
 <script>
-        let a=0;
-        let width=1;
-        let dh=document.getElementById('box');
-        function move() {
-            a++;
-            if(a>=500){
-                a=0;
-            }
-            let left;
-            left=0-width*a;
-            dh.style.backgroundPosition=left+"px";
+    let a=0;
+    let width=1;
+    let dh=document.getElementById('box');
+    function move() {
+        a++;
+        if(a>=500){
+            a=0;
         }
-        window.setInterval(move,10)
+        let left;
+        left=0-width*a;
+        dh.style.backgroundPosition=left+"px";
+    }
+    window.setInterval(move,10)    
 </script>

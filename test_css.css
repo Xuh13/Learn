@@ -25,6 +25,7 @@ li{
     border: 1px solid black;
     background-color: dimgrey;
     text-align: center;
+    cursor: pointer;
 }
 .try{
     height: 150px;
@@ -33,5 +34,7 @@ li{
     text-indent: 20px;
     text-align: center;
     line-height: 150px;    
-    text-decoration: green line-through;
+    text-decoration: line-through;
+    text-decoration-color: red;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
 }
