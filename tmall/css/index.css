@@ -123,3 +123,57 @@
 .search-list li.list-hot a{
     color:#ff0036;
 }
+
+.nav{
+    padding-left:200px;
+    width:1030px;
+    overflow: hidden;
+}
+.nav li{
+    float: left;
+}
+.nav li img{
+    width: 100px;
+    height: 30px;
+    margin-top:3px;
+}
+.nav a{
+    color:#333;
+    font-size: 16px;
+    font-weight:500;
+    display: block;
+    height: 35px;
+    line-height: 35px;
+    padding:0 8px;
+}
+
+.slide-box{
+    height: 500px;
+    background: #ccc;
+    border-top:1px solid #ff0036;
+}
+.slide-wrapper{
+    height: 500px;
+    background: yellow;
+    
+    position: relative;
+}
+.menu-box{
+    width:200px;
+    background-color: #999;
+    height: 535px;
+    position: absolute;
+    top:-35px;
+}
+.menu-box h2{
+    background: #ff0036;
+    height: 35px;
+}
+.menu-box ul li{
+    opacity: 1;
+    height: 31.2px;
+}
+.img-box img{
+    width: 1230px;
+    height: 500px;
+}
