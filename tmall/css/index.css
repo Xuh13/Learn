@@ -164,17 +164,17 @@
     background: rgba(0,0,0,.55);
     color: #fff;
 }
-.menu-box ul li:hover{
+.menu-box ul .main-list-box-list:hover{
     background: #ffffff;
 }
-.menu-box ul li:hover a,li:hover .main-list-box-li,li:hover .main-list-box--{
+.menu-box ul .main-list-box-list:hover a,.main-list-box-list:hover .main-list-box-li,.main-list-box-list:hover .main-list-box--{
     color: #a9180a;
     opacity: 1;
 }
-.menu-box ul li:hover .menu-sub-list{
+.menu-box ul .main-list-box-list:hover .menu-sub-list{
     display: block;
 }
-.menu-box ul li{
+.menu-box ul .main-list-box-list{
     height: 31.2px;
 }
 .img-box{
@@ -205,7 +205,6 @@
     height: 500px;
     width: 800px;
     background: #ffffff;
-    color: aqua;
     position: absolute;
     left: 200px;
     top: 0;
@@ -214,13 +213,77 @@
 .main-list-box{
     position: relative;
 }
+.menu-sub-list-main{
+    float: left;
+    width: 600px;
+    height: 500px;
+}
+.menu-sub-list-img{
+    float: left;
+    width: 200px;
+    height: 500px;
+}
+.menu-sub-list-main-list{
+    height: 67.5px;
+}
+.menu-sub-list-main-list-title{
+    width: 135px;
+    height: 67.5px;
+    float: left;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 75px;
+    margin: 0 0 0 10px;
+    background: #fff;
+    color: #000;
+}
+.menu-sub-list-main-list-main{
+    width: 455px;
+    height: 67.5px;
+    float: left;
+    /* background: #876; */
+}
+.menu-sub-list-main-list-main-list{
+    height: 67.5px;
+    line-height: 67.5px;
+    float: left;
+    margin: 20px 0 20px 0;
+}
+.menu-sub-list-main-list-main-list-li{
+    float: left;
+    line-height: 17.5px;
+    font-size: 15px;
+    margin: 1px 3px 1px 3px;
+    color: #000
+}
+.menu-sub-list-main-list-main-list-li:hover{
+    color: plum;
+}
+
+.menu-sub-list-images{
+    width: 90px;
+    margin: 1px 5px 1px 5px;
+    float: left;
+}
+.menu-sub-list-images:hover{
+    opacity: 0.7;
+}
+
 
 /* 边栏 */
 .mask-tab{
     height: 792px;
     width: 35px;
-    position: absolute;
+    position: fixed;
     top: 0;
     right: 0;
     background: #000000;
+}
+.mask-tab .vip{
+    height: 35px;
+    width: 35px;
+    line-height: 18px;
+    margin: 0,212.5px,0,0;
+    position: absolute;
+    top: 0;
 }
