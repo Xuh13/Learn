@@ -97,7 +97,6 @@
     font-size: 18px;
     font-weight: 700;
     color:#fff;
-    /* 文字之前空隙 */
     letter-spacing: 5px;
 }
 .search-list li{
@@ -155,25 +154,73 @@
 .slide-wrapper{
     height: 500px;
     background: yellow;
-    
     position: relative;
 }
 .menu-box{
     width:200px;
-    background-color: #999;
     height: 535px;
     position: absolute;
     top:-35px;
+    background: rgba(0,0,0,.55);
+    color: #fff;
 }
-.menu-box h2{
-    background: #ff0036;
-    height: 35px;
+.menu-box ul li:hover{
+    background: #ffffff;
+}
+.menu-box ul li:hover a,li:hover .main-list-box-li,li:hover .main-list-box--{
+    color: #a9180a;
+    opacity: 1;
+}
+.menu-box ul li:hover .menu-sub-list{
+    display: block;
 }
 .menu-box ul li{
-    opacity: 1;
     height: 31.2px;
+}
+.img-box{
+    height: 500px;
+    overflow: hidden;
 }
 .img-box img{
     width: 1230px;
+}
+.menu-title{
+    opacity: 1;
+    height: 35px;
+    line-height: 35px;
+    color: #ffffff;
+    background: #ff0036;
+    font-size: 16px;
+    font-weight: 700;
+}
+.menu-title .icon-fenlei{
+    font-size: 18px;
+    margin: 0 8px 0 14px;
+}
+.menu-box ul li .main-list-box-li{
+    margin: 0 4px 0 14px;
+    opacity: 0.55;
+}
+.menu-sub-list{
     height: 500px;
+    width: 800px;
+    background: #ffffff;
+    color: aqua;
+    position: absolute;
+    left: 200px;
+    top: 0;
+    display: none;
+}
+.main-list-box{
+    position: relative;
+}
+
+/* 边栏 */
+.mask-tab{
+    height: 792px;
+    width: 35px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: #000000;
 }
