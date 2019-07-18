@@ -29,15 +29,15 @@ function enter2() {
 function move1() {
     let x = document.getElementsByClassName("ad-box-ad2-list-image")
     x[0].style.display = (x[0].style.display == "block" ? "none" : "block");
-    let y =document.getElementsByClassName("ad-box-ad2-list-li")
-    // y[0].style.background = (y[0].style.background=="#c3c3c3"?"#1ec537":"#c3c3c3")
-    y[0].style.color=(y[0].style.color== "#ffffff" ? "#000000" : "#ffffff")
+    let y = document.getElementsByClassName("ad-box-ad2-list-li")
+    y[0].style.backgroundColor = (y[0].style.backgroundColor == "#1EC537" ? "#C3C3C3" : "#1EC537")
+    y[0].style.color = (y[0].style.color == "#fff" ? "#000" : "#fff")
 }
 
 function move2() {
     let x = document.getElementsByClassName("ad-box-ad2-list-image")
     x[1].style.display = (x[1].style.display == "block" ? "none" : "block");
-    let y =document.getElementsByClassName("ad-box-ad2-list-li")
-    // y[1].style.background = (y[1].style.background=="#c3c3c3"?"#1ec537":"#c3c3c3")
-    y[1].style.color=(y[1].style.color=="#ffffff"?"#000000":"#ffffff")
+    let y = document.getElementsByClassName("ad-box-ad2-list-li")
+    y[1].style.backgroundColor = (y[1].style.backgroundColor == "#1EC537" ? "#C3C3C3" : "#1EC537")
+    y[1].style.color = (y[1].style.color == "#fff" ? "#000" : "#fff")
 }
