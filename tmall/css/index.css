@@ -377,3 +377,42 @@ body{
 .shop-list-li:hover .shop-div{
     opacity: 1;
 }
+
+/* ad */
+.ad-box{
+    margin-top: 20px;
+    height: 665px;
+    width: 1230px;
+    background: #000000;
+}
+.ad-box-head-tmall{
+    height: 28px;
+    width: 214px;
+    padding-right: 216px; 
+    float: left;
+}
+.ad-box-head-img{
+    padding-top: 3px; 
+    height: 25px;
+    width: 214px;
+    
+}
+.ad-box-head-list{
+    height: 31px;
+    width: 800px;
+    background: #0033ff;
+    float: left;
+}
+.ad-box-head-list-option{
+    height: 21px;
+    width: 56px;
+    margin: 5px 10px;
+    line-height: 21px;
+    float: right;
+    font-size: 14px;
+    color: #000;
+}
+.ad-box-head-list-option:hover{
+    border: none;
+    border-bottom: 1px solid #000;
+}
