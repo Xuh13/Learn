@@ -13,6 +13,7 @@
 </head>
 
 <body>
+    <script src="../js/index.js"></script>
     <div id='header'>
         <div class='wrapper'>
             <div class="header-login">
@@ -357,7 +358,7 @@
             </li>
         </ul>
     </div>
-    <div class="wrapper ad-box">
+    <div class="wrapper ad-box clearfix">
         <div class="ad-box-head-tmall">
             <img src="../images/tmall-market.png" alt="" class="ad-box-head-img">
         </div>
@@ -371,14 +372,48 @@
             <a href="#" class="ad-box-head-list-option">母婴用品</a>
             <a href="#" class="ad-box-head-list-option">生鲜水果</a>
         </div>
-        <div class="ad-box-ad">
+        <div class="ad-box-ad clearfix">
             <div class="ad-box-ad1">
                 <div class="ad-box-ad1-tmall"><span class="ad-box-ad1-tmall-txt">天猫超市</span></div>
                 <div class="ad-box-ad1-market"><span class="ad-box-ad1-market-txt">超市家庭日限时1分抢</span></div>
             </div>
-            
+            <div class="ad-box-ad2">
+                <ul class="ad-box-ad2-list">
+                    <li class="ad-box-ad2-list-li" onmouseover="enter1(),time_pause()"
+                        onmouseout="enter1(),time_continue()">今日疯抢</li>
+                    <li class="ad-box-ad2-list-li" onmouseover="enter2(),time_pause()"
+                        onmouseout="enter2(),time_continue()">量贩装</li>
+                </ul>
+                <div class="ad-box-ad2-list-img">
+                    <div class="ad-box-ad2-list-image">
+                        <img src="../images/ad2.jpg" alt="" class="ad-box-ad2-list-image-img">
+                        <div class="ad-box-ad2-list-image-txt">
+                            <img src="../images/ad-daka.png" alt="">
+                            <div class="ad-box-ad2-list-image-txt1"><span>粮油调味</span></div>
+                            <div>爆款直降</span></div>
+                        </div>
+                    </div>
+                    <div class="ad-box-ad2-list-image">
+                        <img src="../images/ad3.jpg" alt="" class="ad-box-ad2-list-image-img">
+                        <div class="ad-box-ad2-list-image-txt">
+                            <img src="../images/ad-daka.png" alt="">
+                            <div class="ad-box-ad2-list-image-txt1"><span>蒙牛特仑苏纯奶</span></div>
+                            <div>仅4.3元/盒</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>           
         </div>
-
+        <a href="#" class="ad-box-wujiang">
+            <div class="ad-box-wujiang-main">
+                <img src="../images/ad4.jpg" alt="" class="ad-box-wujiang-img">
+                <div class="ad-box-wujiang-txt">
+                    <div class="ad-box-wujiang-txt-line"><span>乌江涪陵榨菜丝微辣80g*5下饭菜酱菜泡菜咸菜佐餐早餐小菜</span></div>
+                </div>
+                <div class="ad-box-wujiang-money"><span>￥11</span></div>
+            </div>
+            
+        </a>
     </div>
     <div class="mask-tab">
         <div class="vip">
