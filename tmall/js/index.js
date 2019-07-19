@@ -42,16 +42,16 @@ function enter2() {
 
 function move1() {
     let x = document.getElementsByClassName("ad-box-ad2-list-image")
-    x[0].style.display = (x[0].style.display == "block" ? "none" : "block")
     let y = document.getElementsByClassName("ad-box-ad2-list-li")
+    x[0].style.display = (x[0].style.display == "block" ? "none" : "block")    
     y[0].style.backgroundColor = (y[0].style.backgroundColor == "rgb(30, 197, 55)" ? "rgb(195, 195 ,195)" : "rgb(30, 197, 55)")
     y[0].style.color = (y[0].style.color == "rgb(255, 255, 255)" ? "rgb(0 ,0 ,0)" : "rgb(255, 255, 255)")
 }
 
 function move2() {
     let x = document.getElementsByClassName("ad-box-ad2-list-image")
-    x[1].style.display = (x[1].style.display == "block" ? "none" : "block")
     let y = document.getElementsByClassName("ad-box-ad2-list-li")
+    x[1].style.display = (x[1].style.display == "block" ? "none" : "block")   
     y[1].style.backgroundColor = (y[1].style.backgroundColor == "rgb(30, 197, 55)" ? "rgb(195, 195 ,195)" : "rgb(30, 197, 55)")
     y[1].style.color = (y[1].style.color == "rgb(255, 255, 255)" ? "rgb(0 ,0 ,0)" : "rgb(255, 255, 255)")
 }
