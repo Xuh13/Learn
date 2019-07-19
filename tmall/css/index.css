@@ -568,6 +568,9 @@ a {
 .ad-box-ad2:hover .ad-box-ad2-list-image-img{
     opacity: 0.7;
 }
+.ad-box-ad2:hover .ad-box-ad2-list-image-txt-img{
+    opacity: 0.7;
+}
 .ad-box-ad2-list {
     width: 462px;
     height: 57px;
@@ -638,7 +641,7 @@ a {
     position: relative;
     top: 20px;
 }
-.ad-box-wujiang:hover{
+.ad-box-wujiang:hover .ad-box-wujiang-img{
     opacity: 0.7;
 }
 .ad-box-wujiang:hover .ad-box-wujiang-main{
@@ -669,4 +672,30 @@ a {
     color: #ff0036;
     overflow: hidden;
     line-height: 30px;
+}
+
+/* bottom */
+
+.bottom{
+    height: 602px;
+    background: #000;
+}
+.tamll-ensure{
+    height: 100px;
+    width: 1190px;
+    margin: 25px auto;
+    background-image: url(../images/tmall-ensure.jpg);
+}
+.tamll-ensure-div{
+    height: 100px;
+    position: relative;
+    top: 0;
+    left: 0;
+}
+.tmall-ensure-a{
+    width: 297px;
+    height: 100px;
+    margin: 0 0 0 0;
+    display: block;
+    float: left;
 }
