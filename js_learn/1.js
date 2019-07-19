@@ -13,4 +13,6 @@ function aaa() {
     var parent = document.getElementById('aaa');
     var child = document.getElementById('aaa-a');
     parent.removeChild(child);
+    var c= location.host;
+    console.log(c);
 }
