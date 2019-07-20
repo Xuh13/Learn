@@ -1,0 +1,1 @@
+console.log(1-Math.pow(8/9,3));

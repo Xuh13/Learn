@@ -1,0 +1,1 @@
+document.write("现在是XXXX年XX月XX日Xx点XX分XX秒（星期X)，欢迎您的到访！");
