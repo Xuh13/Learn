@@ -30,4 +30,3 @@ function person1(firstname,lastname,age,year){
 }
 a= new person1('a','b',13,2019);
 console.log(a);
-
