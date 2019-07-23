@@ -32,5 +32,50 @@
     display: block;
 }
 .img{
-
+    height: 291px;
+    width: 790px;
+    background: #aaaaaa;
+}
+.img-img{
+    height: 291px;
+    width: 790px;
+    display: none;
+}
+.img1{
+    display: inline;
+}
+.choose{
+    height: 20px;
+    width: 100px;
+    position: relative;
+    top: -20px;
+    left: 690px;
+    text-align: center;
+}
+.choice{
+    height: 18px;
+    width: 18px;
+    margin: 1px;
+    background: #aaaaaa;
+    float: left;
+    border-radius: 5px;
+}
+.choice-c{
+    background: #ff0036;
+    color:#fff;
+}
+.l-r{
+    height: 20px;
+    width: 40px;
+    position: relative;
+    top: -40px;
+    text-align: center;
+}
+.to{
+    height: 18px;
+    width: 18px;
+    margin: 1px;
+    float: left;
+    border-radius: 5px;
+    background: #ff0036;
 }
