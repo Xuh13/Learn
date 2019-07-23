@@ -1,0 +1,33 @@
+.test{
+    height: 200px;
+    width: 200px;
+}
+.tab{
+    height: 400px;
+    width: 300px;
+    background: #aaaaaa;
+}
+.tab-head{
+    height: 48px;
+    width: 98px;
+    background: #ff0036;
+    float: left;
+    border: #fff solid 1px;
+    color: #000000;
+}
+.tab-head-click{
+    height: 48px;
+    width: 98px;
+    background: blue;
+    float: left;
+    border: #fff solid 1px;
+    color: #fff;
+}
+.tab-main{
+    height: 350px;
+    width: 300px;
+    display: none;
+}
+.main1{
+    display: block;
+}
