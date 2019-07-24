@@ -31,6 +31,17 @@ $(document).ready(function () {
             $("#img-box").animate({
                 left: -750 + "px"
             }, 0)
+        } else if (now == -1) {
+            for (var i = 0; i < $(".btn-box-li").length; i++) {
+                $(".btn-box-li").eq(i).removeClass("active");
+            }
+            $(".btn-box-li").eq(4).addClass("active");
+            $("#img-box").animate({
+                left: "0"
+            })
+            $("#img-box").animate({
+                left: -3750 + "px"
+            }, 0)
         } else if (now < 0) {
             now += 5;
             $(".btn-box-li").eq(now).click();
@@ -54,17 +65,6 @@ $(document).ready(function () {
             })
             $("#img-box").animate({
                 left: -750 + "px"
-            }, 0)
-        } else if (now==-1) {
-            for (var i = 0; i < $(".btn-box-li").length; i++) {
-                $(".btn-box-li").eq(i).removeClass("active");
-            }
-            $(".btn-box-li").eq(4).addClass("active");
-            $("#img-box").animate({
-                left: "0"
-            })
-            $("#img-box").animate({
-                left: -3750 + "px"
             }, 0)
         } else if (now < 0) {
             now += 5;
