@@ -1,0 +1,8 @@
+.try{
+    animation: aaa 5s infinite;
+}
+
+@keyframes aaa{
+    from{transform:rotateX(0deg);transform:rotateY(0deg);}
+    to{transform:rotateX(360deg);transform:rotateY(360deg);}
+}
