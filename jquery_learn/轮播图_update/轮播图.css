@@ -13,10 +13,10 @@ ul{
     overflow: hidden;
 }
 #img-box{
-    width: 3750px;
+    width: 5250px;
     overflow: hidden;
     position: absolute;
-    left: 0;
+    left: -750px;
     top: 0;
 }
 #img-box a{
