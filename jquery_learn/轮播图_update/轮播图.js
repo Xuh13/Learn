@@ -61,7 +61,7 @@ $(document).ready(function () {
             }
             $(".btn-box-li").eq(0).addClass("active");
             $("#img-box").animate({
-                left: -750 * 5 + "px"
+                left: -750 * 6 + "px"
             })
             $("#img-box").animate({
                 left: -750 + "px"
