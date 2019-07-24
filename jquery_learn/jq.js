@@ -45,4 +45,38 @@ $(document).ready(function () {
             }
         }
     })
+
+    function lunbo(){
+        for(var i=0;i<$(".img-img").toArray().length;i++){
+            if($(".img-img").eq(i).css("display")==="inline"){
+                $(".img-img").eq(i).css("display","none");
+                $(".choice").eq(i).removeClass("choice-c");
+                i+=1;
+                if(i<0){
+                    i+=5;
+                }
+                else if(i>4){
+                    i-=5;
+                }
+                $(".img-img").eq(i).css("display","inline");
+                $(".choice").eq(i).addClass("choice-c");
+                break;
+            }
+        }
+    }
+
+    var timer=setInterval(lunbo,2000);
+
+    $(".img").mouseenter(function(){
+        clearInterval(timer);
+    })
+
+    $(".img").mouseleave(function(){
+        timer=setInterval(lunbo,2000);
+    })
+
 })
+
+
+
+
