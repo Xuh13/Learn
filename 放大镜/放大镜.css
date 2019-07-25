@@ -1,0 +1,36 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.main{
+    width: 800px;
+    height: 400px;
+}
+.img{
+    width: 400px;
+    height: 400px;
+    float: left;
+}
+.img1{
+    width: 400px;
+    height: 400px;
+}
+.loupe{
+    width: 400px;
+    height: 400px;
+    float: left;
+    overflow: hidden;
+}
+.img2{
+    position: relative;
+    
+}
+.opc{
+    opacity: 0.2;
+    background: #fff;
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    top: 0;
+    display: none;
+}
