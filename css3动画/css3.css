@@ -1,0 +1,65 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.box {
+    width: 1260px;
+    height: 600px;
+    background-image: url(../images/backgroung_img/memfhis.png);
+}
+
+.img0 {
+    width: 200px;
+    height: 200px;
+    position: absolute;
+}
+
+.img1 {
+    transform: rotate(-45deg);
+    transform-origin: 60% 40%;
+    left: 20px;
+    top: 20px;
+}
+.img2 {
+    transform: rotate(60deg);
+    transform-origin: 60% 40%;
+    left: 240px;
+    top: 30px;
+}
+.img3 {
+    transform: rotate(-75deg);
+    transform-origin: 60% 40%;
+    left: 480px;
+    top: 25px;
+}
+.img4 {
+    transform: rotate(20deg);
+    transform-origin: 60% 40%;
+    left: 780px;
+    top: 20px;
+}
+.img5 {
+    transform: rotate(20deg);
+    transform-origin: 60% 40%;
+    left: 20px;
+    top: 200px;
+}
+.img6 {
+    transform: rotate(-75deg);
+    transform-origin: 60% 40%;
+    left: 240px;
+    top: 200px;
+}
+.img7 {
+    transform: rotate(60deg);
+    transform-origin: 60% 40%;
+    left: 480px;
+    top: 200px;
+}
+.img8 {
+    transform: rotate(-45deg);
+    transform-origin: 60% 40%;
+    left: 780px;
+    top: 200px;
+}
