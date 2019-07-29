@@ -1,0 +1,72 @@
+.loop {
+    width: 200px;
+    height: 200px;
+    border: 10px solid red;
+    border-radius: 50%;
+    /* padding-right: 10px; */
+    position: absolute;
+}
+
+.loop::after {
+    content:'';
+    width: 200px;
+    height: 200px;
+    border: 10px solid red;
+    border-radius: 50%;
+    position: absolute;
+    /* padding-right: 10px; */
+    left: -10px;
+    top: -10px;
+}
+
+.l1 {
+    border-color: blue;
+}
+.l1::after {
+    border-color: blue;
+    z-index: 1;
+    border-bottom-color: transparent;
+}
+
+.l2 {
+    border-color: black;
+    left: 240px;
+}
+.l2::after{
+    border-color: black;
+    z-index: 1;
+    border-left-color: transparent;
+}
+
+.l3 {
+    border-color: red;
+    left: 470px;
+}
+.l3::after{
+    border-color: red;
+    z-index: 1;
+    border-left-color: transparent;
+}
+.l4 {
+    border-color: yellow;
+    left: 120px;
+    top: 120px;
+
+}
+
+.l4::after {
+    border-color: yellow;
+    border-top-color: transparent;
+}
+
+.l5 {
+    border-color: green;
+    left: 350px;
+    top: 120px;
+}
+.l5::after{
+    border-color: green;
+    z-index: 1;
+    border-top-color: transparent;
+    border-right-color: transparent;
+}

@@ -1,4 +1,6 @@
-#this
+
+##this
+
 ```
     //1. 定时器中this -> window
         
@@ -35,8 +37,9 @@
         this.name = "zs";
     }
     var p1 = new Person();
-```
-```
+
+
+
     function fn(x,y){
         console.log(this);
     }
