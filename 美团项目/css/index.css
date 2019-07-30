@@ -1,0 +1,61 @@
+body{
+    font-size: 16px;
+}
+.header{
+    height: 1.01rem;
+    background: #06c1ae;
+    border-bottom: 1px solid #21897d;
+    display: flex;
+    color: #ffffff;
+}
+.city{
+    width: 1.67rem;
+    line-height: 1.01rem;
+    text-align: center;
+}
+.search{
+    height: 0.64rem;
+    width: 4.854rem;
+    font-size: 13px;
+    line-height: 0.64rem;
+    margin-top: 0.2rem;
+    background: #21897d;
+    color: #aaaaaa;
+    text-decoration: none;
+}
+.search-a{
+    text-decoration: none;
+}
+.mine{
+    flex: 1;
+    text-align: center;
+    vertical-align: middle;
+    font-size: .2rem;
+}
+.meituan-ad{
+    width: 100%;
+    border-bottom: 1px solid #e6dede;
+}
+.list-kind{
+    width: 100%;
+    height: 3.3rem;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-bottom: 0.1rem;
+}
+.list-li{
+    /* border: 1px solid #ff0036; */
+    width: 1.5rem;
+    height: 1.5rem;
+    text-align: center;
+}
+.list-li span{
+    width: 100%;
+    font-size: 12px;
+    display: block;
+}
+.list-li .iconfont{
+    width: 100%;
+    font-size: 0.8rem;
+}
