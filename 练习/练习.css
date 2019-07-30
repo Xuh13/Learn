@@ -1,0 +1,13 @@
+.div1 {
+    height: 500px;
+    background: #aaaaaa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.div2 {
+    width: 200px;
+    height: 300px;
+    background: #ff0000;
+}
