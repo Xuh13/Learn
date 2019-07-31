@@ -1,0 +1,39 @@
+*{
+    margin:0;
+    padding: 0;
+}
+html,body{
+    height: 100%;
+}
+#container{
+    width: 100%;
+    height: 100%;
+    background: url("img/bg.jpg") 0 0 repeat;
+    position: relative;
+}
+.box{
+    width: 125px;
+    height: 125px;
+    position: absolute;
+    left:-150px;
+    top:-150px;
+    -webkit-transition: all 1.5s ease;
+}
+#last,#next{
+    width: 40px;
+    height: 80px;
+    position: absolute;
+    top:50%;
+    margin-top: -40px;
+    display: none;
+}
+#last{
+    background: #fff url("img/prev.png") center center no-repeat;
+    left:0;
+    border-radius: 0px 10px 10px 0;
+}
+#next{
+    background: #fff url("img/next.png") center center no-repeat;
+    right:0;
+    border-radius: 10px 0 0 10px;
+}
