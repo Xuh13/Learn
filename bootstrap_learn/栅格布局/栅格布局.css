@@ -1,5 +1,11 @@
-.span4{
+.span8 ,.span4{
     background: #aaaaaa;
     border: 1px solid blue;
-    border-radius: 10px;
+    border-radius: 5px;
+    height: 100px;
+    margin-top: 50px;
+}
+.span8{
+    height: 500px;
+    float: left;
 }

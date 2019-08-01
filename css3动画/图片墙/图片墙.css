@@ -17,7 +17,8 @@ html,body{
     position: absolute;
     left:-150px;
     top:-150px;
-    -webkit-transition: all 1.5s ease;
+    border: 5px solid #ffffff;
+    transition: all 1.5s ease;
 }
 #last,#next{
     width: 40px;

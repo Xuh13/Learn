@@ -27,8 +27,6 @@ for (var i = 0; i < 24; i++) {
 function loadSuccess() {
     var l_margin = (oContainer.offsetWidth - 125 * 6) / 7;
     var r_margin = (oContainer.offsetHeight - 125 * 4) / 5;
-
-    var aDiv = oContainer.getElementsByTagName('div');
     var top_b = 126;
     var left_b = 387;
     var mark_now = 0;
@@ -46,24 +44,25 @@ function loadSuccess() {
             oDiv.style.background = 'url(./img/thumbs/' + (index + 1) + '.jpg) 0 0 no-repeat';
             oDiv.mark = index;
             oDiv.innerHTML = "<span></span>";
-            oDiv.style.height = "125px";
-            oDiv.style.width = "125px";
             oDiv.style.position = "absolute";
+            oDiv.style.transition="all 1.5s ease";
             oDiv.onclick = fn;
             oContainer.appendChild(oDiv);
             index++;
         }
     }
-
-    //初始赋图
-    for (i = 0; i < aDiv.length; i++) {
-        aDiv[i].style.transitionDelay = (23 - i) * 100 + "ms";
-        aDiv[i].style.left = aDiv[i].rowCol.col * (l_margin + 125) + l_margin + "px";
-        aDiv[i].style.top = aDiv[i].rowCol.row * (r_margin + 125) + r_margin + "px";
-        aDiv[i].style.WebkitTransform = 'rotate(' + (Math.random() - 0.5) * 40 + 'deg)';
-        aDiv[i].style.border = "5px solid #fff";
-    }
-
+    var aDiv = oContainer.getElementsByTagName("div");
+    //初始赋图  (Bug:直接写for循环出现无动画bug 添加setTimeout后解决 css3代码执行太快导致动画延时未赋值就已执行完毕)
+    setTimeout(() => {      
+        for (var i = 0; i < aDiv.length; i++) {
+            aDiv[i].style.transitionDelay = (23 - i) * 100 + "ms";
+            aDiv[i].style.left = aDiv[i].rowCol.col * (l_margin + 125) + l_margin + "px";
+            aDiv[i].style.top = aDiv[i].rowCol.row * (r_margin + 125) + r_margin + "px";
+            aDiv[i].style.WebkitTransform = 'rotate(' + (Math.random() - 0.5) * 40 + 'deg)';
+        }
+    }, 0);
+    
+    console.log(aDiv);
     function fn() {
         //收起来
         if (flag) {
