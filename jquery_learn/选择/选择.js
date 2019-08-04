@@ -1,0 +1,13 @@
+$(document).ready(function(){
+    $(".btn1").mousedown(function(){
+        $(":checkbox").prop("checked",true);
+    })
+    $(".btn2").mousedown(function(){
+        $(":checkbox").prop("checked",false);
+    })
+    $(".btn3").mousedown(function(){
+        $(":checkbox").each(function(_index,elem){
+            $(elem).prop("checked",!$(elem).prop("checked"));
+        })
+    })
+})

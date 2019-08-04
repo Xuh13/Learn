@@ -123,6 +123,8 @@ body{
     height: 1.8rem;
     display: flex;
     flex-wrap: wrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
     justify-content: left;
 }
 .list-like-name{
@@ -135,9 +137,11 @@ body{
 .list-like-ad{
     font-size: 0.24rem;
     height: 0.68rem;
+    line-height: 0.68rem;
     margin-bottom: 0.16rem;
     color: #666;
     text-overflow: ellipsis;
+    overflow: hidden;
 }
 .list-like-price{
     width: 5.1rem;
