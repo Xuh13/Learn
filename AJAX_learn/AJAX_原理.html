@@ -21,13 +21,14 @@
         }
 
         //2.请求
-        xmlhttp.open("GET", "test1.jaon", true); //(请求方式,请求地址(后台),是否异步)
+        xmlhttp.open("GET", "text.json", true); //(请求方式,请求地址(后台),是否异步)
         xmlhttp.send(); //发送请求
 
         //3.服务器响应
         xmlhttp.onreadystatechange = function () {
             if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
                 document.getElementById("myDiv").innerHTML = xmlhttp.responseText;//xmlhttp.responseText 取到服务端返回的数据
+                console.log(xmlhttp.responseText);
             }
         }
         // readyState
