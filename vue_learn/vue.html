@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./vue.css">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    .class1 {
+        background: #444;
+        color: #eee;
+    }
+</style>
+
+<body>
+    <script src="../jquery-3.4.1.min.js"></script>
+    <script src="../vue.min.js"></script>
+    <script src="./vue.js"></script>
+
+    <div id="aaa">
+        <span>side:{{side}}</span>
+        <span>mai:{{mai}}</span>
+        <span>{{doc()}}</span>
+    </div>
+
+    <div id="bbb">
+        <label for="r1">修改颜色</label><input type="checkbox" v-model="use" id="r1">
+        <br><br>
+        <div :class="{'class1':use}">
+            bbb
+        </div>
+    </div>
+
+    <!-- <ol id="ccc">
+        <li v-for="site in data1">{{ site.name }}</li>
+    </ol> -->
+
+    <ol id="ccc">
+        <template v-for="site in data1">
+            <li>{{ site.name }}</li>
+        </template>
+    </ol>
+
+</body>
+
+</html>

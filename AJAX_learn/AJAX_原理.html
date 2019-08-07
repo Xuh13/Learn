@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+        //1.创建xmlhttp对象
+        var xmlhttp;
+        if (window.XMLHttpRequest) { // code for IE7+, Firefox, Chrome, Opera, Safari
+            xmlhttp = new XMLHttpRequest();
+        } else { // code for IE6, IE5
+            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+
+        //2.请求
+        xmlhttp.open("GET", "test1.jaon", true); //(请求方式,请求地址(后台),是否异步)
+        xmlhttp.send(); //发送请求
+
+        //3.服务器响应
+        xmlhttp.onreadystatechange = function () {
+            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                document.getElementById("myDiv").innerHTML = xmlhttp.responseText;//xmlhttp.responseText 取到服务端返回的数据
+            }
+        }
+        // readyState
+        // 存有 XMLHttpRequest 的状态。 从 0 到 4 发生变化。
+        //     0: 请求未初始化
+        //     1: 服务器连接已建立
+        //     2: 请求已接收
+        //     3: 请求处理中
+        //     4: 请求已完成， 且响应已就绪
+        // status	
+        //     200: "OK"
+        //     404: 未找到页面
+        //     500: 服务器端错误
+    </script>
+
+</body>
+
+</html>

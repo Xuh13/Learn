@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+
+    <script>
+
+        
+
+        // name="111";
+        // age=13;
+        // var obj1 = {
+        //     name,
+        //     age
+        // }
+        // console.log(obj1);
+
+        // var a = document.getElementsByTagName("li");
+        // for(let i =0 ; i<a.length;i++){
+        //     a[i].onclick = function (){
+        //         setTimeout(()=>{
+        //             console.log(this);
+        //         },1000);
+        //     }
+        // }
+
+        // var b = (...rest) => {
+        //     console.log(rest);
+        // }
+        // b(1,2,3,4);
+
+
+
+
+
+        // function person(name,age){
+        //     this.name=name;
+        //     this.age=age;
+        // };
+
+        // person.prototype.say = function(){
+        //     console.log("111");
+        // }
+
+        // function coder(name,age,hair){
+        //     person.apply(this,[name,age]);
+        //     this.hair=hair;
+        // }
+
+        // coder.prototype = new person();
+        // coder.prototype.constructor = coder;
+
+        // var aaa = new coder("xuhang",19,0);
+        // console.log(aaa);
+        // aaa.say();
+
+
+
+
+        class Person{
+            constructor(name){
+                this.name=name;
+            }
+            say(){
+                console.log("111");
+            }
+            static walk(){
+                console.log("walk");
+            }
+        } 
+        
+        Person.walk();
+
+        class Coder extends Person{
+            constructor(name){
+                super(name);
+                this.hair=true;
+            }
+            say(){
+                console.log("222");
+            }
+        }
+        let a = new Coder("aaa");
+        a.say();
+        console.log(a);
+
+
+
+        let qqq = [1,1,2];
+        function removesame(awe){
+            awe = Array.from(new Set(awe));
+            return awe.length;
+        };
+        console.log(removesame(qqq));
+        
+
+       
+    </script>
+</body>
+
+</html>
