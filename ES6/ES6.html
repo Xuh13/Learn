@@ -101,13 +101,11 @@
 
         let qqq = [1,1,2];
         function removesame(awe){
-            awe = Array.from(new Set(awe));
-            return awe.length;
+            awe = [...new Set(awe)];
+            return awe;
         };
         console.log(removesame(qqq));
         console.log(qqq);
-        
-
        
     </script>
 </body>
