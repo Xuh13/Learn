@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //promise 以同步方式表现异步请求
+        new Promise(function (resolve, reject) {
+            $.get('text.json', function (data) {
+                if (data) {
+                    resolve(data.id);
+                }else{
+                    reject();
+                }
+            });
+        }).then(function () {
+            $.get('text.json', function () {
+
+            })
+        }).catch(function(){
+            console.log("fail");
+        })
+    </script>
+
+</body>
+
+</html>
