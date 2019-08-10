@@ -30,9 +30,33 @@
 
     <ol id="ccc">
         <template v-for="site in data1">
-            <li v-show="site.name==null">{{ site.name }}</li>
+            <li v-show="site.name!=null">{{ site.name }}</li>
         </template>
     </ol>
+
+    <div id="model">
+        <input type="text" value="hehe" v-model="text">
+        <span>{{text}}</span>
+    </div>
+
+    <div id="ddd">
+        <input type="checkbox" value="唱" v-model="hobby">唱
+        <input type="checkbox" value="跳" v-model="hobby">跳
+        <input type="checkbox" value="rap" v-model="hobby">rap
+        <select name="" id="" v-model="school">
+            <option value="黑大">黑大</option>
+            <option value="理工">理工</option>
+            <option value="师大">师大</option>
+        </select>
+    </div>
+
+    <div id="eee">
+        <input type="text" value="" v-model="text">
+        <button v-on:click="add()">change</button>
+        <ul >
+            <li v-for="site in show" v-on:click="color(site)" v-if="site.dlt" v-bind:class="{'class2':site.change}">{{ site.name }} <button v-on:click="delate(site)">删除</button></li>
+        </ol>
+    </div>
 
 </body>
 
