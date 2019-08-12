@@ -51,14 +51,17 @@ window.onload = function () {
         },
         methods: {
             add() {
-                this.proList.push({
-                    name: this.name,
-                    price: parseInt(this.price),
-                    isSelect: false
-                });
-                this.showList = [...this.proList];
-                this.name = '';
-                this.price = '';
+                if (this.name && this.price) {
+                    this.proList.push({
+                        name: this.name,
+                        price: parseInt(this.price),
+                        isSelect: false
+                    });
+                    this.showList = [...this.proList];
+                    this.name = '';
+                    this.price = '';
+                }
+
             },
             search() {
                 var searchList = this.proList.filter((obj, index) => {
@@ -69,10 +72,9 @@ window.onload = function () {
             change(obj) {
                 obj.isSelect = !obj.isSelect;
                 this.proList = [...this.showList];
-                if(obj.isSelect){
+                if (obj.isSelect) {
                     this.totalPrice += obj.price;
-                }
-                else{
+                } else {
                     this.totalPrice -= obj.price;
                 }
             },
@@ -88,7 +90,7 @@ window.onload = function () {
             total() {
                 var total_price = 0;
                 this.showList.forEach(function (obj, index) {
-                    if (obj.isSelect==true) {
+                    if (obj.isSelect == true) {
                         total_price += obj.price;
                     }
                 });
