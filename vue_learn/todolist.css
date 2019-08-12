@@ -1,0 +1,34 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#container {
+    width: 400px;
+    margin: 50px auto;
+}
+
+ul {
+    list-style: none;
+}
+
+li {
+    height: 50px;
+    line-height: 50px;
+    background: #cccccc;
+    padding: 0 10px;
+    margin-bottom: 10px;
+}
+.price,
+.close {
+    float: right;
+}
+
+.close {
+    margin-left: 10px;
+    color: red;
+}
+
+.selected {
+    background: pink;
+}
