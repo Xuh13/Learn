@@ -76,7 +76,7 @@ window.onload = function () {
                     this.totalPrice -= obj.price;
                 }
             },
-            del() {
+            delate() {
                 totalPrice = 0;
                 var result = this.proList.filter(function (obj) {
                     return obj.isSelect == false;
