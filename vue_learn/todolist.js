@@ -61,7 +61,6 @@ window.onload = function () {
                     this.name = '';
                     this.price = '';
                 }
-
             },
             search() {
                 var searchList = this.proList.filter((obj, index) => {
@@ -77,6 +76,14 @@ window.onload = function () {
                 } else {
                     this.totalPrice -= obj.price;
                 }
+            },
+            delate_this(obj) {
+                var result = this.proList.filter(function (obj1) {
+                    return obj1 != obj;
+                });
+                this.proList = [...result];
+                this.showList = [...result];
+                this.total();
             },
             delate() {
                 totalPrice = 0;

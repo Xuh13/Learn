@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script src="../vue.js"></script>
+    <script src="./facility.js"></script>
+    <div id="app">
+        <div>
+            是否需要额外付费设施
+            <input type="checkbox" v-model="isCheck" @click="clear()">
+            <ul v-show="isCheck">
+                <li v-for="obj in payList">
+                    {{obj.name}}（{{obj.price}}）
+                    <input type="checkbox" v-model="totalList" :value="obj">
+                </li>
+            </ul>
+        </div>
+        <div>
+            <p>订单费用信息</p>
+            <ul>
+                <li v-for="obj in totalList">{{obj.name}}({{obj.price}})</li>
+            </ul>
+        </div>
+        <div>总金额：{{total()}}</div>
+    </div>
+
+</body>
+
+</html>

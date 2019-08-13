@@ -58,6 +58,20 @@
         </ol>
     </div>
 
+    <div id="fff">
+        <ul v-for="val in arr">
+            <li>{{val}}</li>
+        </ul>
+        <button @click="fn()">change</button>
+    </div>
+
+    <div id="ggg">
+        <input type="text" v-model="firstname">
+        <input type="text" v-model="lastname">
+        <!-- <input type="text" v-model="fullname"> -->
+        <span>{{fullname}}</span>
+    </div>
+
 </body>
 
 </html>

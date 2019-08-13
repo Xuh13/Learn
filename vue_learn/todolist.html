@@ -30,7 +30,7 @@
             <li v-for="obj in showList" @click="change(obj)" :class="{selected:obj.isSelect}">
                 <input type="checkbox" v-model="obj.isSelect">
                 <span>{{obj.name}}</span>
-                <span class="close">[X]</span>
+                <span class="close" @click.stop="delate_this(obj)">[X]</span>
                 <span class="price">{{obj.price}}</span>
             </li>
         </ul>
