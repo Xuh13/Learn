@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./弹出层.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <script src="../vue.js"></script>
+    <script src="./弹出层.js"></script>
+
+    <div id="login">
+        <button @click="login()" class="btn1">登录</button>
+        <button @click="regist()" class="btn2">注册</button>
+        <set v-if="isShow" :set=toDo class="main">
+            <span slot="title">{{toDo}}</span>
+            <span slot="close" class="close" @click="close()">X</span>
+            <button slot="btn">{{toDo}}</button>
+            <div class="repassword" slot="repassword" v-if="isRegist">
+                <span>确认密码</span>
+                <input type="password" placeholder="请再次输入密码">
+            </div>
+        </set>
+    </div>
+
+
+    <template id="use">
+        <div class="piece">
+            <div class="top">
+                <div class="title">
+                    <slot name="title"></slot>
+                </div>
+                <slot name="close"></slot>
+            </div>
+            <div class="data">
+                <div class="name">
+                    <span>用户名</span>
+                    <input type="text" placeholder="请输入用户名">
+                </div>
+                <div class="password">
+                    <span class="pw">密码</span>
+                    <input type="password" placeholder="请输入密码">
+                </div>
+                <slot name="repassword"></slot>
+                <slot name="btn"></slot>
+            </div>
+        </div>
+    </template>
+</body>
+
+</html>

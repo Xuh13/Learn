@@ -1,0 +1,45 @@
+#login {
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn1 {
+    float: left;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.btn2 {
+    float: left;
+    position: absolute;
+    top: 0;
+    left: 40px;
+}
+
+.piece {
+    height: 250px;
+    width: 250px;
+    border: 1px solid black;
+
+}
+
+.top {
+    height: 25px;
+    width: 250px;
+    border-bottom: 1px solid black;
+}
+
+.title {
+    float: left;
+}
+
+.close {
+    float: right;
+    font-size: 15px;
+    height: 15px;
+    width: 15px;
+    border: 1px solid black;
+}
