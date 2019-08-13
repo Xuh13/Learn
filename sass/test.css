@@ -10,3 +10,7 @@ image {
 h2 .once {
   width: 50px;
 }
+
+h2 .once .app {
+  height: 20px;
+}
