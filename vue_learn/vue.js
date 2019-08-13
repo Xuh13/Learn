@@ -113,4 +113,15 @@ window.onload = function () {
             }
         }
     })
+
+    new Vue({
+        el:"#hhh",
+        data:{
+            student:[
+                "aaa",
+                "bbb",
+                "ccc"
+            ]    
+        }
+    })
 }
