@@ -13,4 +13,6 @@ h2 .once {
 
 h2 .once .app {
   height: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
