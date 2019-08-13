@@ -16,3 +16,7 @@ h2 .once .app {
   padding-top: 20px;
   padding-bottom: 20px;
 }
+
+h2 .once .app:hover {
+  color: blue;
+}
