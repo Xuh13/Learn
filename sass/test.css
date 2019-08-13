@@ -2,3 +2,11 @@ body {
   background: red;
   width: 50px;
 }
+
+image {
+  src: url(../../vue.js);
+}
+
+h2 .once {
+  width: 50px;
+}

@@ -1,5 +1,14 @@
 $color:red;
+$url:'../../vue.js';
 body{
     background: $color;
     width: 50px;
+}
+image{
+    src: url(#{$url})
+}
+h2{
+    .once{
+        width: 50px;
+    }
 }
