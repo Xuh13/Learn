@@ -1,3 +1,4 @@
+@import 'common.sass';
 $color:red;
 $url:'../../vue.js';
 body{
@@ -15,10 +16,27 @@ h2{
             padding:{
                 top:20px;
                 bottom: 20px;
-            }
+            };
             &:hover{
                 color:blue;
             }
         }
     }
+}
+@mixin a($co:green) {
+    width: (50px/2);
+    height: 50px+100px;
+    background: #000;
+    border: 1px solid $co;
+}
+
+h3{
+    @include a(#aaa);
+}
+h4{
+    @extend h3;
+    color: #000;
+}
+@function add($aa,$bb){
+    @return $aa+$bb;
 }
