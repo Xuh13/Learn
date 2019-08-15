@@ -1,0 +1,106 @@
+1 入口
+2 出口
+3 package.json
+  "scripts": {
+    "build": "webpack"
+  },
+  cnpm install -D webpack-cli
+  
+  =>   npm run build  (打包 执行完这行 会生成一个dist文件)
+
+4 html-webpack-plugin插件  打包html的插件
+      1）下载 cnpm i -D html-webpack-plugin
+      2) 在webpack.config.js中引入  
+        const HtmlWebpackPlugin = require('html-webpack-plugin');
+      3）使用webpack.config.js中
+        plugins:[
+            new HtmlWebpackPlugin({
+                minify:{
+                    removeAttributeQuotes:true
+                },
+                hash:true,
+                template:'./src/index.html'
+            })
+        ]
+5 服务预热更新
+  1）下载 cnpm i -D  webpack-dev-server
+  2) 在webpack.config.js中中配置devServer
+        devServer:{
+          contentBase:path.resolve(__dirname,'dist'), //根目录
+          host:'localhost' 
+      }
+  3) 在package.json 配置  
+      "scripts": {
+          "build": "webpack",
+          "server":"webpack-dev-server --open"
+      },
+  4）启动服务  npm run  server
+6 打包css
+    1)下载 css-loader style-loader   cnpm i -D css-loader style-loader
+    2)在webpack.config.js中中配置module
+      module:{
+          rules:[
+              {
+                  test:/\.css$/,
+                  use:['style-loader','css-loader']
+              }
+          ]
+      }
+    3）在入口文件中引入需要使用的css文件 import './index.css';  
+    4) npm run build 在dist中的index.js中 搜索css是否存在 （css是被打包到了js中）
+7 mode配置生产环境还是开发环境 
+      "development", 开发环境
+      "production" 生产环境
+8 分离css文件
+    1）安装  cnpm i -D extract-text-webpack-plugin@next 
+    2）在webpack.config.js中引入 const ExtractTextPlugin = require("extract-text-webpack-plugin");
+    3）在module中配置
+      module: {
+        rules: [
+          {
+            test: /\.css$/,
+            use: ExtractTextPlugin.extract({
+              fallback: "style-loader",
+              use: "css-loader"
+            })
+          }
+        ]
+      },
+    4）在plugins中配置
+        plugins: [
+          new ExtractTextPlugin("styles.css"), //styles.css对应分离出的css名
+        ]
+
+9 css中引入图片
+    1)下载 cnpm i -D file-loader url-loader
+    2)配置loader
+      {
+          test:/\.(jpg|png|gif)/,
+          use:[
+              {
+                  loader:"url-loader",
+                  options:{
+                      limit:500,
+                      outputPath:'images/'
+                  }
+              }
+
+          ]
+      }
+
+
+cnpm i -D html-withimg-loader 
+
+下载 cnpm i -D node-sass sass-loader
+
+
+cnpm i -D postcss-loader autoprefixer
+
+下载babel
+cnpm i -D babel-core babel-loader @babel/core @
+babel/preset-env 
+
+
+    
+
+
