@@ -6,10 +6,18 @@ body{
     font-size: 16px;
     background:#f0efed;
 }
-.head{
-    height: 1.01rem;
+.header{
+    height: 3rem;
     background: #06c1ae;
     border-bottom: 1px solid #21897d;
     display: flex;
     color: #ffffff;
+}
+.header-back{
+    line-height: 3rem;
+    font-size: 1.08rem;
+}
+.header-title{
+    line-height: 3rem;
+    font-size: 1.08rem;
 }
