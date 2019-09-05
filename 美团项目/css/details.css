@@ -7,7 +7,9 @@ body{
     background:#f0efed;
 }
 .head{
-    height: 1.02rem;
+    height: 1.01rem;
     background: #06c1ae;
     border-bottom: 1px solid #21897d;
+    display: flex;
+    color: #ffffff;
 }
