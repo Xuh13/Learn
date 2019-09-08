@@ -1,8 +1,9 @@
-*{
+* {
     margin: 0;
     padding: 0;
 }
-body{
+
+body {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 0.28rem;
     line-height: 1.5;
@@ -12,7 +13,8 @@ body{
     overflow: hidden;
     text-align: center;
 }
-.header{
+
+.header {
     height: 3rem;
     background: #06c1ae;
     border-bottom: 1px solid #21897d;
@@ -20,49 +22,56 @@ body{
     color: #ffffff;
     font-size: 16px;
 }
-.header-back{
+
+.header-back {
     line-height: 3rem;
     font-size: 1.326rem !important;
     width: 1.55rem;
     padding: 0 0.3rem;
     float: left;
 }
-.header-title{
+
+.header-title {
     width: 16rem;
     line-height: 3rem;
     font-size: 1.08rem;
     float: left;
 }
-.header-collect{
+
+.header-collect {
     width: 2.65rem;
     line-height: 3rem;
     font-size: 1.215rem !important;
     float: left;
 }
-.header-menu{
+
+.header-menu {
     width: 2.65rem;
     line-height: 3rem;
     font-size: 1.215rem !important;
 }
 
-.details-main{
+.details-main {
     position: relative;
 }
-.details-main-ad{
+
+.details-main-ad {
     width: 100%;
     border-bottom: 1px solid #e6dede;
     background: #ffffff;
     display: block;
-   
+
 }
-.details-main-img{
+
+.details-main-img {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     z-index: -1;
 }
-.details-main-txt{
+
+.details-main-txt {
     position: absolute;
     top: 15.78rem;
     width: 100%;
@@ -71,7 +80,8 @@ body{
     text-align: left;
     text-shadow: 1px 1px 1px #000;
 }
-.details-main-txt::after{
+
+.details-main-txt::after {
     content: '';
     height: 7.67rem;
     position: absolute;
@@ -79,9 +89,10 @@ body{
     left: 0;
     right: 0;
     z-index: -1;
-    background: -webkit-linear-gradient( bottom, rgba(0, 0, 0, 0.58), rgba(0, 0, 0, 0.3) 64%, transparent );
+    background: -webkit-linear-gradient(bottom, rgba(0, 0, 0, 0.58), rgba(0, 0, 0, 0.3) 64%, transparent);
 }
-.details-main-txt-title{
+
+.details-main-txt-title {
     font-size: 1.3rem;
     line-height: 2.6rem;
     height: 2.6rem;
@@ -90,7 +101,8 @@ body{
     left: 0.8rem;
     bottom: 6.862rem;
 }
-.details-main-txt-type{
+
+.details-main-txt-type {
     font-size: 1.0rem;
     line-height: 2.6rem;
     height: 2.6rem;
@@ -99,7 +111,8 @@ body{
     left: 0.8rem;
     bottom: 4.862rem;
 }
-.details-main-price{
+
+.details-main-price {
     width: 100%;
     height: 4.75rem;
     background: #fff;
@@ -107,4 +120,35 @@ body{
     position: absolute;
     top: 18.22rem;
     border-bottom: 1px solid #ddd8ce;
+    padding: 0.675rem 0.6rem 0.675rem 0.7rem;
+    box-sizing: border-box;
+}
+
+.details-main-price-now {
+    color: #06c1ae;
+    font-size: 2.27rem;
+    font-weight: 600;
+    float: left;
+}
+
+.details-main-price-now-yuan {
+    font-size: 0.9rem;
+    font-weight: normal;
+}
+
+.details-main-price-before {
+    color: #999;
+    font-size: 0.9rem;
+    float: left;
+}
+
+.details-main-price-btn {
+    width: 8.125rem;
+    height: 2.5rem;
+    text-align: center;
+    font-size: 1.3rem;
+    border-radius: .26rem;
+    background-color: #f90;
+    color: #fff;
+    float: right;
 }
