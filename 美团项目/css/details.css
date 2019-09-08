@@ -53,6 +53,7 @@ body {
 
 .details-main {
     position: relative;
+    height: 23.45rem;
 }
 
 .details-main-ad {
@@ -120,8 +121,9 @@ body {
     position: absolute;
     top: 18.22rem;
     border-bottom: 1px solid #ddd8ce;
-    padding: 0.675rem 0.6rem 0.675rem 0.7rem;
+    padding: 0.675rem 0.6rem 0.675rem 0.6rem;
     box-sizing: border-box;
+    overflow: hidden;
 }
 
 .details-main-price-now {
@@ -151,4 +153,41 @@ body {
     background-color: #f90;
     color: #fff;
     float: right;
+}
+
+.details-main-tag{
+    background: #ffffff;
+    color: #6bbd00;
+    margin-bottom: 0.5rem;
+    height: 6rem;
+    list-style-type: none;
+}
+
+.details-main-tag li{
+    line-height: 2.5rem;
+    padding: 0 0.5rem;
+    display: inline;
+}
+
+.details-main-tag-3rd{
+    color: #666;
+    display: block !important;
+    float: left;
+    margin-left: 2.7rem; 
+}
+
+.details-evaluate{
+    background: #ffffff;
+}
+
+.details-evaluate-score{
+    color: #f90;
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-align: left;
+    padding-left: 0.6rem;
+}
+
+.details-evaluate-score-pingjia,.icon-iconfontyoujiantou-copy-copy-copy-copy{
+    /* float: right; */
 }
