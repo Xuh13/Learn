@@ -178,16 +178,26 @@ body {
 
 .details-evaluate{
     background: #ffffff;
+    border-bottom: 1px solid #ddd8ce;
 }
 
 .details-evaluate-score{
     color: #f90;
-    font-size: 1.2rem;
+    font-size: 0.9rem;
     font-weight: 600;
     text-align: left;
-    padding-left: 0.6rem;
+    padding: 0.5rem 0 0.5rem 0.6rem;
 }
 
-.details-evaluate-score-pingjia,.icon-iconfontyoujiantou-copy-copy-copy-copy{
-    /* float: right; */
+.details-evaluate-score-pingjia{
+    margin-left: 9rem;
+}
+
+.icon-iconfontyoujiantou-copy-copy-copy-copy,.details-evaluate-score-pingjia{
+    color: #999;
+    font-weight: 500;
+}
+
+.details-tag{
+    background: #ffffff;
 }
