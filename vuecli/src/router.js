@@ -42,6 +42,9 @@ export default new Router({
     {
       path: '/redirect/:userid/:username',
       redirect: '/testurl/:userid/:username',
+    },{
+      path: '*',
+      component: Error,
     },
   ],
 });
