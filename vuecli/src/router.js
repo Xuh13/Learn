@@ -5,7 +5,6 @@ import Test from './views/Test.vue';
 import Test1 from './views/Test1.vue';
 import Test2 from './views/Test2.vue';
 import TestUrl from './views/TestUrl.vue';
-import Redirect from './views/Redirect.vue';
 
 Vue.use(Router);
 
