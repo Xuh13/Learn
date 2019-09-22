@@ -1,23 +1,28 @@
 <template>
   <div>
-    <div class="footer">
-      <router-link to="/Movie" class="footer-box">电影</router-link>
-      <router-link to="/Book" class="footer-box">图书</router-link>
-      <router-link to="/Music" class="footer-box">音乐</router-link>
-      <router-link to="/Photo" class="footer-box">图片</router-link>
+    <div class="footer" :style="{background:color}">
+      <router-link to="/Movie" class="footer-box"><div @click="change(0)">电影</div></router-link>
+      <router-link to="/Book" class="footer-box"><div @click="change(1)">图书</div></router-link>
+      <router-link to="/Music" class="footer-box"><div @click="change(2)">音乐</div></router-link>
+      <router-link to="/Photo" class="footer-box"><div @click="change(3)">图片</div></router-link>
     </div>
   </div>
 </template>
 
 <script>
-export default {};
+import {mapState, mapMutations, mapGetters, mapActions} from 'vuex';
+export default {
+    computed: 
+        mapState(['title','color','title_list']),
+    methods: 
+        mapMutations(["change"]),
+};
 </script>
 
 <style lang="scss" scoped>
 .footer {
   height: 1.4rem;
   width: 100%;
-  background-color: #008de1;
   text-align: center;
   line-height: 1rem;
   position: fixed;
