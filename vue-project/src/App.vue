@@ -1,12 +1,25 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+    <Common-Header></Common-Header>
+    <div class="container">
+      <transition name="index">
+        <router-view class="index"></router-view>
+      </transition>
     </div>
-    <router-view/>
+    <Common-Footer></Common-Footer>
   </div>
 </template>
+
+<script>
+    import CommonHeader from './components/CommonHeader';
+    import CommonFooter from './components/CommonFooter';
+    export default {
+        components:{
+          CommonHeader,
+          CommonFooter,
+        },
+    };
+</script>
 
 <style lang="scss">
 #app {
@@ -16,14 +29,17 @@
   text-align: center;
   color: #2c3e50;
 }
-#nav {
-  padding: 30px;
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
+.container{
+    margin: 1rem 0 1.4rem 0;
+    overflow: hidden;
+}
+.index-enter {
+  opacity: 0;
+}
+.index-enter-active {
+  transition: opacity 2s ease;
+}
+.index-enter-to {
+  opacity: 1;
 }
 </style>

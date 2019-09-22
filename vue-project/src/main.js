@@ -1,7 +1,10 @@
+/* eslint-disable import/no-unresolved */
 import Vue from 'vue';
 import App from './App.vue';
 import router from './router';
 import store from './store';
+import '@/assets/css/Common.scss';
+import '@/assets/js/rem.js';
 
 Vue.config.productionTip = false;
 
