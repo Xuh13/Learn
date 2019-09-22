@@ -11,21 +11,25 @@ export default new Vuex.Store({
       {
         id: 0,
         name: '电影',
+        path: '/movie',
         color: '#008de1',
       },
       {
         id: 1,
         name: '图书',
+        path: '/book',
         color: '#FFC300',
       },
       {
         id: 2,
         name: '音乐',
+        path: '/music',
         color: '#C20C0C',
       },
       {
         id: 3,
         name: '照片',
+        path: '/photo',
         color: '#4BB7BE',
       },
     ],

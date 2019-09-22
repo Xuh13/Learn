@@ -1,10 +1,7 @@
 <template>
   <div>
     <div class="footer" :style="{background:color}">
-      <router-link to="/Movie" class="footer-box" @click.native="change(0)">电影</router-link>
-      <router-link to="/Book" class="footer-box" @click.native="change(1)">图书</router-link>
-      <router-link to="/Music" class="footer-box" @click.native="change(2)">音乐</router-link>
-      <router-link to="/Photo" class="footer-box" @click.native="change(3)">图片</router-link>
+      <router-link v-for="(obj,index) in title_list" :key="index" :to="obj.path" class="footer-box" @click.native="change(obj.id)">{{obj.name}}</router-link>
     </div>
   </div>
 </template>
@@ -16,6 +13,13 @@ export default {
         mapState(['title','color','title_list']),
     methods: 
         mapMutations(["change"]),
+        created() {
+            this.title_list.forEach((obj,index) => {
+                if(obj.path === this.$route.path){
+                    this.change(obj.id);
+                }
+            });
+        },
 };
 </script>
 
