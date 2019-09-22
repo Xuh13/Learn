@@ -1,10 +1,10 @@
 <template>
   <div>
     <div class="footer" :style="{background:color}">
-      <router-link to="/Movie" class="footer-box"><div @click="change(0)">电影</div></router-link>
-      <router-link to="/Book" class="footer-box"><div @click="change(1)">图书</div></router-link>
-      <router-link to="/Music" class="footer-box"><div @click="change(2)">音乐</div></router-link>
-      <router-link to="/Photo" class="footer-box"><div @click="change(3)">图片</div></router-link>
+      <router-link to="/Movie" class="footer-box" @click.native="change(0)">电影</router-link>
+      <router-link to="/Book" class="footer-box" @click.native="change(1)">图书</router-link>
+      <router-link to="/Music" class="footer-box" @click.native="change(2)">音乐</router-link>
+      <router-link to="/Photo" class="footer-box" @click.native="change(3)">图片</router-link>
     </div>
   </div>
 </template>
