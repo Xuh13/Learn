@@ -14,11 +14,14 @@
         </div>
       </li>
     </ul>
+    <div class="turn" v-if="loading"></div>
   </div>
 </template>
 
 <script>
+var a;
 import axios from "axios";
+import {mapState, mapMutations, mapGetters, mapActions} from 'vuex';
 export default {
   data() {
     return {
@@ -26,15 +29,21 @@ export default {
       begin: 0
     };
   },
+  computed: {
+        ...mapState(['loading']),
+  },
   methods: {
     refresh(num) {
       console.log(num);
       axios
         .get(
-          "https://bird.ioliu.cn/v1?url=https://douban.uieee.com/v2/movie/in_theaters?start=" + num + "&count=10"
+          "https://bird.ioliu.cn/v1?url=https://douban.uieee.com/v2/movie/in_theaters?start=" +
+            num +
+            "&count=10"
         )
         .then(res => {
-          this.movieList = [...this.movieList,...res.data.subjects];
+          this.movieList = [...this.movieList, ...res.data.subjects];
+          loading = false;
         })
         .catch(res => {
           console.log("FALSE");
@@ -47,9 +56,13 @@ export default {
       let scrollTop = document.documentElement.scrollTop;
       let clinetHeight = document.documentElement.clientHeight;
       let height = document.documentElement.scrollHeight;
-      console.log(parseInt(scrollTop + clinetHeight),height);
-      if (scrollTop + clinetHeight - height>-1&&scrollTop + clinetHeight - height<1) {
-        this.begin+=10;
+      console.log(parseInt(scrollTop + clinetHeight), height);
+      if (
+        scrollTop + clinetHeight - height > -1 &&
+        scrollTop + clinetHeight - height < 1
+      ) {
+        this.begin += 10;
+        loading = true;
         this.refresh(this.begin);
       }
     };
@@ -62,27 +75,51 @@ export default {
   width: 100%;
   display: flex;
   flex-direction: column;
+  .movie_list_li {
+    width: 100%;
+    flex: 1;
+    display: flex;
+    border-bottom: 1px solid #333;
+    .movie_list_li_img {
+      padding: 0.2rem;
+      width: 2rem;
+      float: left;
+    }
+    .movie_list_li_txt {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+      padding-left: 0.1rem;
+      .movie_list_li_txt_name {
+        padding-top: 0.2rem;
+        font-size: 0.5rem;
+      }
+    }
+  } 
 }
-.movie_list_li {
-  width: 100%;
-  flex: 1;
-  display: flex;
-  border-bottom: 1px solid #333;
-}
-.movie_list_li_img {
-  padding: 0.2rem;
-  width: 2rem;
-  float: left;
-}
-.movie_list_li_txt {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  text-align: left;
-  padding-left: 0.1rem;
-}
-.movie_list_li_txt_name {
-  padding-top: 0.2rem;
-  font-size: 0.5rem;
-}
+.turn {
+    width: 0.2rem;
+    height: 0.2rem;
+    background: aqua;
+    animation: turn 1s linear infinite;
+    margin: 100px auto;
+  }
+  @keyframes turn {
+    0% {
+      -webkit-transform: rotate(0deg);
+    }
+    25% {
+      -webkit-transform: rotate(90deg);
+    }
+    50% {
+      -webkit-transform: rotate(180deg);
+    }
+    75% {
+      -webkit-transform: rotate(270deg);
+    }
+    100% {
+      -webkit-transform: rotate(360deg);
+    }
+  }
 </style>

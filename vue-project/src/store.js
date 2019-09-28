@@ -7,6 +7,7 @@ export default new Vuex.Store({
   state: {
     title: '电影',
     color: '#008de1',
+    loading: false,
     title_list: [
       {
         id: 0,
