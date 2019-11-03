@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="root"></div>
+    <script src="./react.development.js"></script>
+    <script src="./react-dom.development.js"></script>
+    <script src="./babel.min.js"></script>
+
+    <script type="text/babel">
+    
+        class Father extends React.Component{
+            constructor(){
+                super();
+                this.state = {
+                    msg:"react",
+                }
+                this.change = this.change.bind(this);
+            }
+            change(word){
+                this.setState({
+                    msg:word,
+                })
+            }
+            render(){
+                return(
+                    <div>
+                        <h1>FATHER</h1>
+                        <Child msg={this.state.msg} change={this.change}></Child>
+                    </div>
+                )
+            }
+        }
+
+        class Child extends React.Component{
+            constructor(){
+                super();
+                this.state = {
+                    word:"Nothing"
+                }
+            }
+            render(){
+                return(
+                    <div>
+                        <p>{this.props.msg}</p>
+                        <button onClick={()=>{this.props.change(this.state.word)}}>change</button>
+                    </div>
+                )
+            }
+        }
+
+        ReactDOM.render(
+            <Father></Father>,
+            document.getElementById("root")
+        )
+    </script>
+
+</body>
+
+</html>

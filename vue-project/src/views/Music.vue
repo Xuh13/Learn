@@ -2,14 +2,10 @@
   <div>
     <h1>Music</h1>
     <a-player
-      :music ="{
-        title: this.songList[0].title,
-        src: this.songList[0].src,
-        pic: this.songList[0].pic,
-        id: this.songList[0].id,
-        artist: this.songList[0].artist,
-        lyric: this.songList[0].lyric,
-      }" v-if="this.contral" :showLrc='true' :narrow="false" theme="#b7daff" mode="circulation" ref="player"></a-player>
+      :music="music"
+      theme="#b7daff" 
+      v-if="contral"
+    ></a-player>
   </div>
 </template>
 
@@ -23,56 +19,57 @@ export default {
   data() {
     return {
       flag: false,
-      musicList: "",
       songList: [],
-      title: '',
-      src: '',
-      pic: '',
-      id: '',
-      artist: '',
-      lyric: '',
-      contral: false,
+      contral: false
     };
   },
   methods: {
     refrash() {
-      let obj = {
-        
-      };
+      let obj = {};
       axios
-        .get("https://api.imjad.cn/cloudmusic/?type=lyric&id=32785674")
+        .get("https://api.imjad.cn/cloudmusic/?type=lyric&id=34497243")
         .then(res => {
-          console.log(res);
           obj.lyric = res.data.lrc.lyric;
         })
-        .catch(res=>{
-          console.log('FALSE');
+        .catch(res => {
+          console.log("FALSE");
         });
       axios
-        .get("https://api.imjad.cn/cloudmusic/?type=song&id=32785674")
+        .get("https://api.imjad.cn/cloudmusic/?type=song&id=34497243")
         .then(res => {
           obj.src = res.data.data[0].url;
           obj.id = res.data.data[0].id;
         })
-        .catch(res=>{
-          console.log('FALSE');
+        .catch(res => {
+          console.log("FALSE");
         });
       axios
-        .get("https://api.imjad.cn/cloudmusic/?type=detail&id=32785674")
+        .get("https://api.imjad.cn/cloudmusic/?type=detail&id=34497243")
         .then(res => {
           obj.pic = res.data.songs[0].al.picUrl;
           obj.title = res.data.songs[0].name;
           obj.artist = res.data.songs[0].ar[0].name;
         })
-        .catch(res=>{
-          console.log('FALSE');
+        .catch(res => {
+          console.log("FALSE");
         });
       this.songList.push(obj);
-      this.contral = true;
     }
   },
   created() {
     this.refrash();
+    // axios.all([refresh()])
+    // .then(res =>{
+    //   this.contral = true;
+    // })
+    // .catch(),
+    
+    console.log(this.$route.query.id)
+  },
+  computed: {
+    music(){
+      return this.songList[0]
+    }
   }
 };
 </script>

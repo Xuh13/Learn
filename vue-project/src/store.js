@@ -24,7 +24,7 @@ export default new Vuex.Store({
       {
         id: 2,
         name: '音乐',
-        path: '/music',
+        path: '/music_home',
         color: '#C20C0C',
       },
       {

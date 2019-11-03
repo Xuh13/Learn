@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="root"></div>
+    <div id="root1"></div>
+    <div id="root2"></div>
+    <script src="./react.development.js"></script>
+    <script src="./react-dom.development.js"></script>
+    <script src="./babel.min.js"></script>
+
+    <script type="text/babel">
+        let a =10;
+        let b = 10;
+        let c = 0;
+        const aaa = (
+            <div>
+                <h1>text</h1>
+                <p>{a+b}</p>
+                {c == 0? <h1>text</h1>:<p>{a+b}</p>}
+            </div>
+        )
+
+        const Nbb = (props) =>{
+            return <h1>show {props.name}</h1>;
+        }
+        /*
+            1.组件开头字母必须大写
+            2.只能有一个根元素
+            3.必须闭合
+            4.props传参不能更改
+        */
+
+        class Welcome extends React.Component{
+            constructor(){
+                super();
+                this.state = {
+                    num:0,
+                }
+                // this.add=this.add.bind(this);
+                // 用bind方法将this指针指向正确位置
+            }
+            add(){
+                console.log(this.state.num);
+                this.setState({
+                    num:this.state.num+1,
+                })
+            }
+            render() {
+                return (<div>
+                        <h3>{this.props.name}:class真好用{this.props.children}</h3>
+                        <h4>{this.state.num}</h4>
+                        <button onClick ={()=>{this.add()}} >change</button>
+                    </div>);
+            }
+        }
+
+        ReactDOM.render(
+            aaa,
+            document.getElementById('root')
+        )
+
+        ReactDOM.render(
+            <Nbb name="xuhang"></Nbb>,
+            document.getElementById('root1')
+        )
+        ReactDOM.render(
+            <Welcome name="xuhang">
+                <h4>qqq</h4>
+            </Welcome>,
+            document.getElementById('root2')
+        )
+    </script>
+
+</body>
+
+</html>
