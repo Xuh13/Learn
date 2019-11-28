@@ -6,10 +6,11 @@ exports.reg = function (req, res, next) {
 }
 
 exports.do_reg = function (req, res, next) {
+    var account = req.body.email;
     var name = req.body.name; //post传输可以使用req.body来接收
-    var password = req.body.psw;
+    var password = req.body.pwd;
 
-    user_model.insert_name(name, password, function (err, data) {
+    user_model.insert_name(account,name, password, function (err, data) {
         res.redirect('login');
     });
 
@@ -20,23 +21,37 @@ exports.login = function (req, res, next) {
 }
 
 exports.do_login = function (req, res, next) {
-    var name = req.body.name; //post传输可以使用req.body来接收
-    var password = req.body.psw;
+    var account = req.body.email; //post传输可以使用req.body来接收
+    var password = req.body.pwd;
 
-    user_model.check_name_pwd(name, password, function (err, data) {
-        if(data.length()>0){
-            req.session.name = data.name;
-            req.session.password = data.password;
-            res.redirect('index',[])
+    user_model.check_name_pwd(account, password, function (err, data) {
+        if(data.length>0){
+            req.session.id=data[0].USER_ID;
+            req.session.nickname=data[0].NAME;
+            console.log(req.session);
+            res.redirect('/index');
+        }else{
+            console.log(123);
         }
     });
 }
 
 exports.index = function(req,res,next){
-    res.render('index',[{'sess':req.session}]);
+    res.render('index_logined',{'sess':req.session});
 }
 
 exports.unlogin=function(req,res,next){
     req.session = null;
     res.redirect('/index');
+}
+
+exports.checkname=function(req,res,next){
+    var account = req.body.account;
+    user_model.check_same_name(account,function(err,data){
+        if(data.length>0){
+            res.send('success');
+        }else{
+            res.send('error');
+        }
+    });
 }
