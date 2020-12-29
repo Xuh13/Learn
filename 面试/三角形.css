@@ -1,0 +1,8 @@
+.squ{
+    width: 0;
+    height: 0;
+    border: 0px;
+    border: 30px solid;
+    border-color: transparent transparent red transparent;
+}
+/* border实际上是三角形 使元素空间为0 用border占满 将其他三个border三角形变为透明 即可完成 PS.虽然只剩三角形 但元素空间是被占住的 */

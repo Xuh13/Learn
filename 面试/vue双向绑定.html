@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="inputMsg">
+    <br>
+    <p id="msg"></p>
+    <button onclick="getMsg()">get</button>
+</body>
+</html>
+
+<script>
+	var obj={
+		msg:'hello world'
+	}
+	Object.defineProperty(obj,'msg',{
+		get:function(){
+			console.log('获取数值!');
+		},
+		set:function(val){
+			document.getElementById('inputMsg').value=val;
+			document.getElementById('msg').innerText=val;
+		}
+	})
+	document.getElementById('inputMsg').addEventListener('keyup',function(e){
+		obj.msg=e.target.value;
+    })
+    function getMsg(){
+        console.log(obj.msg)
+    }
+</script>

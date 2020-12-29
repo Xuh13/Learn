@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="his()">跳转</button>
+</body>
+</html>
+<!-- 不能跨域,协议 域名 端口必须都是相同的 -->
+<script>
+    function his(){
+        history.pushState(null,null,'垂直居中.html')
+        history.replaceState(null, null, '垂直居中.html');
+        //replaceState调用后 url会根据参数而变化 但浏览器并未增加浏览记录 而是将当前网页的浏览记录替换掉
+        //虽然url改变了 但不会触发浏览器reload
+    }
+</script>
+<!-- 后续应用部分 -->

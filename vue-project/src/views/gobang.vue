@@ -1,4 +1,3 @@
-/* eslint-disable no-plusplus */
 <template>
   <div class="box">
     <canvas ref="canvas" width="450" height="450" @click="chessClick"></canvas>
@@ -21,7 +20,6 @@ export default {
     };
   },
   mounted() {
-    // eslint-disable-next-line no-unused-vars
     setTimeout((_) => {
       this.init();
     });
@@ -39,7 +37,6 @@ export default {
     // 填充数组
     fillArray() {
       // 是否走过
-      // eslint-disable-next-line no-plusplus
       for (let i = 0; i < 15; i++) {
         this.chessBoard[i] = [];
         for (let j = 0; j < 15; j++) {
@@ -90,28 +87,27 @@ export default {
         }
       }
       // 赢法的统计数组
-      // eslint-disable-next-line no-plusplus
       for (let i = 0; i < this.count; i++) {
         this.myWin[i] = 0;
         this.computerWin[i] = 0;
       }
     },
     // 绘制水印
-    // drawImage(callback) {
-    //   const { context } = this;
-    //   const img = new Image();
-    //   img.src = "/images/logo.svg";
-    //   img.onload = (_) => {
-    //     context.drawImage(
-    //       img,
-    //       (450 - img.width) / 2,
-    //       (450 - img.height) / 2,
-    //       img.width,
-    //       img.height
-    //     );
-    //     callback();
-    //   };
-    // },
+    drawImage(callback) {
+      const { context } = this;
+      const img = new Image();
+      img.src = '/images/logo.svg';
+      img.onload = (_) => {
+        context.drawImage(
+          img,
+          (450 - img.width) / 2,
+          (450 - img.height) / 2,
+          img.width,
+          img.height,
+        );
+        callback();
+      };
+    },
     // 绘制棋盘
     drawChessBoard() {
       const { context } = this;
@@ -162,9 +158,11 @@ export default {
       const oy = e.offsetY;
       const x = Math.floor(ox / 30);
       const y = Math.floor(oy / 30);
+
       if (this.chessBoard[x][y] === 0) {
         this.chessBoard[x][y] = 1;
         this.onStep(x, y, this.me);
+
         // 统计赢法
         for (let k = 0; k < this.count; k++) {
           if (this.wins[x][y][k]) {
@@ -189,6 +187,7 @@ export default {
       let max = 0; // 最大分数
       let u = 0,
         v = 0; // 所在坐标
+
       for (let i = 0; i < 15; i++) {
         myScore[i] = [];
         computerScore[i] = [];

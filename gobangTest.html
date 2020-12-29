@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>五子棋</title>
+    <style type='text/css'>
+        canvas {
+            display: block;
+            margin: 50px auto;
+            box-shadow: -2px -2px 2px #efefef, 5px 5px 5px #b9b9b9;
+            cursor: pointer;
+        }
+
+        .btn-wrap {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+        }
+
+        .btn-wrap div {
+            margin: 0 10px;
+        }
+
+        div>span {
+            display: inline-block;
+            padding: 10px 20px;
+            color: #fff;
+            background-color: #EE82EE;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        div.unable span {
+            background: #D6D6D4;
+            color: #adacaa;
+        }
+
+        #result-wrap {
+            text-align: center;
+        }
+        .btn{
+            width: 100%;
+            padding-left: 50%;
+        }
+        .next{
+            width: 50px;
+            margin-left: -100px;
+            float: left;
+        }
+        .back{
+            margin-left: 25px;
+            width: 50px;
+            float: left;
+        }
+    </style>
+</head>
+
+<body>
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+    <h3 id="result-wrap">--五子棋--</h3>
+    <canvas id="chess" width="450px" height="450px"></canvas>
+    <div class="btn">
+        <button class="next" onclick="Next()">重开</button>
+        <button class="back" onclick="back()">悔棋</button>
+    </div>
+    
+    <script type="text/javascript" charset="utf-8">
+    var Begin = 0;
+        var _nowi = 0,
+            _nowj = 0; //记录下棋的坐标
+        var _compi = 0,
+            _compj = 0;
+        var resultTxt = document.getElementById('result-wrap');
+
+        var chressBord = []; //棋盘
+        var time = 0;
+        var suc = 0;
+        var Holder = 1;
+        for (var i = 0; i < 15; i++) {
+            chressBord[i] = [];
+            for (var j = 0; j < 15; j++) {
+                chressBord[i][j] = 0;
+            }
+        }
+
+        var chess = document.getElementById("chess");
+        var context = chess.getContext('2d');
+
+        context.strokeStyle = '#bfbfbf'; //边框颜色
+
+        window.onload = function () {
+            drawChessBoard(); // 画棋盘
+            begin()
+            // setTimeout(function () {
+            //     alert("超时")
+            //     console.log("超时")
+            // }, 300000)
+
+        }
+        //绘画棋盘
+        var drawChessBoard = function () {
+            for (var i = 0; i < 15; i++) {
+                context.moveTo(15 + i * 30, 15);
+                context.lineTo(15 + i * 30, 435);
+                context.stroke();
+                context.moveTo(15, 15 + i * 30);
+                context.lineTo(435, 15 + i * 30);
+                context.stroke();
+            }
+        }
+        //画棋子
+        var oneStep = function (i, j, me) {
+            context.beginPath();
+            context.arc(15 + i * 30, 15 + j * 30, 13, 0, 2 * Math.PI); // 画圆
+            context.closePath();
+            //渐变
+            var gradient = context.createRadialGradient(15 + i * 30 + 2, 15 + j * 30 - 2, 13, 15 + i * 30 + 2, 15 +
+                j * 30 - 2, 0);
+
+            if (me == 1) {
+                gradient.addColorStop(0, '#0a0a0a');
+                gradient.addColorStop(1, '#636766');
+            } else {
+                gradient.addColorStop(0, '#d1d1d1');
+                gradient.addColorStop(1, '#f9f9f9');
+            }
+            context.fillStyle = gradient;
+            context.fill();
+        }
+
+        var Step = function (i, j, holder) {
+            chressBord[i][j] = holder
+            oneStep(i, j, holder)
+        }
+        //销毁棋子
+        var minusStep = function (i, j) {
+            //擦除该圆
+            context.clearRect((i) * 30, (j) * 30, 30, 30);
+
+            // 重画该圆周围的格子
+            context.beginPath();
+            context.moveTo(15 + i * 30, j * 30);
+            context.lineTo(15 + i * 30, j * 30 + 30);
+            context.moveTo(i * 30, j * 30 + 15);
+            context.lineTo((i + 1) * 30, j * 30 + 15);
+
+            context.stroke();
+        }
+
+        function getAIStep() {
+            $.ajax({
+                type: 'post',
+                url: 'http://localhost:8080/JavaGobang_war_exploded/Step',
+                data: {
+                    chess: chressBord,
+                    Holder: Holder == 1 ? 2 : 1
+                },
+                async: true,
+                traditional: true, //防止深度序列化
+                dataType: "json",
+                success: function (data) {
+                    Step(data.i, data.j, Holder == 1 ? 2 : 1)
+                    _compi = data.i
+                    _compj = data.j
+                    if (judge(Holder == 1 ? 2 : 1, data.i, data.j)) {
+                        time++;
+                        return
+                    }
+                    // setTimeout(() => {
+                        // getUserStep()
+                    // }, 500);
+                    
+                }
+            })
+        }
+
+        function getUserStep() {
+            $.ajax({
+                type: 'post',
+                url: 'http://localhost:8080/JavaGobang_war_exploded/chenhaolinAI',
+                data: {
+                    chess: chressBord,
+                    Holder: Holder,
+                    begin:Begin
+                },
+                async: true,
+
+                traditional: true, //防止深度序列化
+                dataType: "json",
+                success: function (data) {
+                    Step(data.i, data.j, Holder)
+                    _nowi = data.i
+                    _nowj = data.j
+                    if (judge(Holder, data.i, data.j)) {
+                        time++;
+                        suc++;
+                        Next();
+                        return
+
+                    }
+                    // setTimeout(() => {
+                        getAIStep()
+                    // }, 500);
+                    
+                }
+            })
+        }
+
+
+
+        function judge(num, x, y) {
+            var n1 = 0, //左右方向 
+                n2 = 0, //上下方向 
+                n3 = 0, //左上到右下方向 
+                n4 = 0; // 右上到左下方向 
+            //***************左右方向*************
+            //先从点击的位置向左寻找，相同颜色的棋子n1自加，直到不是相同颜色的棋子，则跳出循环 
+            for (var i = x; i >= 0; i--) {
+                if (chressBord[i][y] != num) {
+                    break;
+                }
+                n1++;
+            }
+            //然后从点击的位置向右下一个位置寻找，相同颜色的棋子n1自加，直到不是相同颜色的棋子，则跳出循环 
+            for (var i = x + 1; i < 15; i++) {
+                if (chressBord[i][y] != num) {
+                    break;
+                }
+                n1++;
+            }
+            //****************上下方向************ 
+            for (var i = y; i >= 0; i--) {
+                if (chressBord[x][i] != num) {
+                    break;
+                }
+                n2++;
+            }
+            for (var i = y + 1; i < 15; i++) {
+                if (chressBord[x][i] != num) {
+                    break;
+                }
+                n2++;
+            }
+            //****************左上到右下斜方向*********** 
+            for (var i = x, j = y; i >= 0, j >= 0; i--, j--) {
+                if (i < 0 || j < 0 || chressBord[i][j] != num) {
+                    break;
+                }
+                n3++;
+            }
+            for (var i = x + 1, j = y + 1; i < 15, j < 15; i++, j++) {
+                if (i >= 15 || j >= 15 || chressBord[i][j] != num) {
+                    break;
+                }
+                n3++;
+            }
+            //****************右上到左下斜方向*************
+            for (var i = x, j = y; i >= 0, j < 15; i--, j++) {
+                if (i < 0 || j >= 15 || chressBord[i][j] != num) {
+                    break;
+                }
+                n4++;
+            }
+            for (var i = x + 1, j = y - 1; i < 15, j >= 0; i++, j--) {
+                if (i >= 15 || j < 0 || chressBord[i][j] != num) {
+                    break;
+                }
+                n4++;
+            }
+            var str;
+            if (n1 >= 5 || n2 >= 5 || n3 >= 5 || n4 >= 5) {
+                if (num == 1) { //黑棋 
+                    alert("黑棋赢了");
+                    return true
+
+                } else if (num == 2) { //白棋 
+                    alert("白棋赢了");
+                    return true
+                }
+            }
+            return 0
+        }
+
+
+
+        var Next = function () {
+            Begin = 0;
+            
+            let c = document.getElementById('chess')
+            c.style.display = "none"
+            let ctx = c.getContext("2d")
+            minusStep(_nowi, _nowj)
+            ctx.save()
+            ctx.setTransform(1, 0, 0, 1, 0, 0)
+            ctx.clearRect(0, 0, 450, 450)
+            drawChessBoard()
+            // ctx.restore()
+            c.style.display = ""
+            for (var i = 0; i < 15; i++) {
+                for (var j = 0; j < 15; j++) {
+                    chressBord[i][j] = 0;
+                }
+            }
+            _nowi = 0
+            _nowj = 0
+            resultTxt.innerHTML = '--五子棋--';
+            _compi = 0
+            _compj = 0
+            begin()
+        }
+        // var _compi = 0,
+        // _compj = 0; //记录计算机当前下棋的坐标
+
+        var begin = function () {
+            if (Holder == 2) {
+                oneStep(7, 7, true);
+                chressBord[7][7] = 1
+                Begin++;
+            }
+            // getUserStep()
+            Begin++;
+        }
+
+        function back(){
+            if(_nowi==0&&_nowj==0&&_compi==0&&_compj==0)
+                return
+            minusStep(_nowi,_nowj)
+            minusStep(_compi,_compj)
+            chressBord[_nowi,_nowj]=0;
+            chressBord[_compi,_compj]=0;
+            _nowi=0
+            _nowj=0
+            _compi=0
+            _compj=0
+        }
+
+        chess.onclick = function (e) {
+            var x = e.offsetX;
+            var y = e.offsetY;
+            var i = Math.floor(x / 30);
+            var j = Math.floor(y / 30);
+            _nowi = i;
+            _nowj = j;
+            if (chressBord[i][j] == 0) {
+                Step(i, j, Holder)
+                if (judge(Holder, i, j)) {
+                    time++;
+                    suc++;
+                    return
+                }
+                getAIStep()
+            }
+        }
+    </script>
+</body>
+
+</html>

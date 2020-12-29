@@ -1,0 +1,62 @@
+/* 未知父子宽高 margin:auto;实现垂直居中 */
+.outside{
+    width: 500px;
+    height: 400px;
+    position: relative;
+    background: #AAAAAA;
+}   
+.inside{
+    width: 200px;
+    height: 100px;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #000000;
+}
+/* 已知父子宽高 */
+.outside{
+    width: 500px;
+    height: 400px;
+    position: relative;
+    background: #AAAAAA;
+}   
+.inside{
+    width: 200px;
+    height: 100px;
+    position: absolute;
+    margin-left: 150px;
+    margin-top: 150px;
+    background: #000000;
+}
+/* table-ceil完成垂直居中 */
+.outside{
+    width: 500px;
+    height: 400px;
+    background: #AAAAAA;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+}   
+.inside{
+    width: 200px;
+    height: 100px;
+    vertical-align: middle;
+    background: #000000;
+}
+/* flex实现水平垂直居中 */
+.outside{
+    width: 500px;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #AAAAAA;
+}   
+.inside{
+    width: 200px;
+    height: 100px;
+    background: #000000;
+}

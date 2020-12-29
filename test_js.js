@@ -15,3 +15,8 @@ function changeImage()
         alert(txt);
     }
 }//灯泡亮不亮
+
+let a  = [1,2,3,4,5]
+let b = a;
+b.pop()
+console.log(a)

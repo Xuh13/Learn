@@ -1,0 +1,12 @@
+.test{
+    display: flex;
+    flex-direction: row;
+    /* row:左->右 row-reverse:右->左 column:上->下 column-reverse:下->上 */
+    align-items: center;
+    justify-content: center;
+}
+
+.son{
+    flex: 1;
+    /* 份数(剩余空间的百分比)1==100% 可以用% */
+}
